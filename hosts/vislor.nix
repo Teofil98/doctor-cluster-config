@@ -19,5 +19,8 @@
   # not in nixpkgs yet
   # simd.arch = "zenver4";
 
+  # for SPDK
+  boot.hugepages2MB.number = 2048;
+
   system.stateVersion = "23.05";
 }
