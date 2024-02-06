@@ -1,0 +1,13 @@
+diff --git a/arch/x86/kernel/alternative.c b/arch/x86/kernel/alternative.c
+index 4832a5d5e..de96a2ee4 100644
+--- a/arch/x86/kernel/alternative.c
++++ b/arch/x86/kernel/alternative.c
+@@ -402,7 +402,7 @@ noinstr void BUG_func(void)
+ {
+ 	BUG();
+ }
+-EXPORT_SYMBOL_GPL(BUG_func);
++EXPORT_SYMBOL(BUG_func);
+ 
+ #define CALL_RIP_REL_OPCODE	0xff
+ #define CALL_RIP_REL_MODRM	0x15

@@ -16,7 +16,7 @@
     # since the disk failure, ryan is partitioned with disko
     ../modules/zfs-partitioning.nix
   ];
-
+  programs.sysdig.enable = false;
   networking.hostName = "ryan";
   disko.rootDisk = "/dev/sda";
   # disko.noZfs = true;

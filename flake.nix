@@ -20,7 +20,7 @@
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixpkgs.url = "github:TUM-DSE/nixpkgs/nixos-23.11-backports";
+    nixpkgs.url = "github:dimstav23/tum-dse-nixpkgs/nixos-23.11-backports-update-zfs";
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";

@@ -1,0 +1,14 @@
+diff --git a/include/linux/netfs.h b/include/linux/netfs.h
+index a5374218e..8daaba665 100644
+--- a/include/linux/netfs.h
++++ b/include/linux/netfs.h
+@@ -471,7 +471,8 @@ static inline void netfs_inode_init(struct netfs_inode *ctx,
+ 	ctx->cache = NULL;
+ #endif
+ 	/* ->releasepage() drives zero_point */
+-	mapping_set_release_always(ctx->inode.i_mapping);
++	if (ctx->inode.i_mapping)
++		mapping_set_release_always(ctx->inode.i_mapping);
+ }
+ 
+ /**

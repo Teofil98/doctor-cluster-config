@@ -30,18 +30,44 @@ let
     modDirVersionArg = "6.1.0-rc4";
     extraPatches = [ ];
   };
-  coconut_svsm = {
-    owner = "coconut-svsm";
+  svsm_preview_hv_v4 = {
+    owner = "AMDESE";
     repo = "linux";
-    rev = "e1335c6f029281db280945e084ec2d079934e744"; # branch svsm
-    sha256 = "sha256-Q/gTKUvWE/9wGExzbgxJPjfz2g2JtKPAp93jcbl3rBw=";
-    version = "6.5";
-    modDirVersionArg = "6.5.0";
-    extraPatches = [ ];
-  };
-  # snp_kernel = svsm_preview_hv_1;
-  snp_kernel = coconut_svsm;
+    rev = "557bec5818023359f85d4f55273a0ddf2323556a"; # branch svsm-preview-hv-4
+    sha256 = "sha256-F8aalopWWt1aSKojmeln57IoO93b/x5p68oreNBkHqc=";
+    version = "6.7";
+    modDirVersionArg = "6.7.0-rc6-next-20231222";
+    extraPatches = [
+	      {
+      
+        name = "zfs export fix";
+        patch = ./bug_func.patch;
+        extraConfig = ''
+        '';
+              }
+              {
+        name = "nfs fix";
+        patch = ./nfs.patch;
+        extraConfig = ''
+        '';
+             }
 
+                 ];
+  };
+
+
+#  coconut_svsm = {
+#    owner = "coconut-svsm";
+#    repo = "linux";
+#    rev = "e1335c6f029281db280945e084ec2d079934e744"; # branch svsm
+#    sha256 = "sha256-Q/gTKUvWE/9wGExzbgxJPjfz2g2JtKPAp93jcbl3rBw=";
+#    version = "6.5";
+#    modDirVersionArg = "6.5.0";
+#    extraPatches = [ ];
+#  };
+  # snp_kernel = svsm_preview_hv_1;
+  #snp_kernel = coconut_svsm;
+   snp_kernel = svsm_preview_hv_v4;
 in
 with snp_kernel;
 buildLinux (args // rec {
