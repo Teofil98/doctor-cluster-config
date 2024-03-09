@@ -400,6 +400,7 @@ in
       openssh.authorizedKeys.keys = laurentKeys;
     };
 
+    # Paul Zhang (bachelor thesis with Ilya Meignan--Masson)
     paulz = {
       isNormalUser = true;
       home = "/home/paulz";
