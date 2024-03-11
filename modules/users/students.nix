@@ -215,7 +215,7 @@ in
     };
 
     # Martin Lambeck, Ma Thesis with Jiyang (FAIR)
-    # Remove after SS23
+    # Remove after SS24
     martinL = {
       isNormalUser = true;
       home = "/home/martinL";
@@ -238,7 +238,7 @@ in
     };
 
     # Bruno Scheufler, Project work with Atsushi (Serverless FPGA)
-    # Remove after SS23
+    # Remove after SS24
     bruno = {
       isNormalUser = true;
       home = "/home/bruno";
@@ -248,6 +248,7 @@ in
       allowedHosts = [ "amy" "clara" ];
       openssh.authorizedKeys.keys = brunoKeys;
     };
+
     # Alexander Schindler, Thesis work with Patrick (VMPL)
     alexander = {
       isNormalUser = true;
